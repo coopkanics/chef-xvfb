@@ -19,6 +19,7 @@ cookbook_file "/etc/init/xvfb.conf" do
 end
 
 service "xvfb" do
+  provider Chef::Provider::Service::Upstart
   action [ :enable, :start ]
 end
 
